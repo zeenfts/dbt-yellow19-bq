@@ -1,0 +1,1 @@
+dbt-bigquery==1.3.0 # It will auto install dbt-core latest

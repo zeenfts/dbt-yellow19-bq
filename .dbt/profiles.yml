@@ -1,0 +1,15 @@
+dbt_yellow19_bq: # this needs to match the profile in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /root/.dbt/creds.json # replace this with the full path to your keyfile
+      project: <YOUR_GCP_PROJECT_ID> # Replace this with your project id
+      dataset: <YOUR_BIGQUERY_DATASET_NAME> # Replace this with dbt_your_name, e.g. dbt_bilbo
+      threads: 1
+      timeout_seconds: 300
+      # job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      priority: interactive
