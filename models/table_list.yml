@@ -67,7 +67,7 @@ models:
   - name: RateCodeID
     description: > 
     The final rate code in effect at the end of the trip.
-    1= Standard rate
+    1=Standard rate
     2=JFK
     3=Newark
     4=Nassau or Westchester
@@ -88,7 +88,7 @@ models:
 
   - name: DOLocationID 
     description: > 
-    TLC Taxi Zone in which the taximeter was engaged
+    TLC Taxi Zone in which the taximeter was disengaged
 
   - name: payment_type
     description: > 
