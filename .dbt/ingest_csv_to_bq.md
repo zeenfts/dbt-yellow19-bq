@@ -10,5 +10,5 @@
 10. `~/.local/bin/kaggle datasets download microize/newyork-yellow-taxi-trip-data-2020-2019` on the shell to download data directly to the Google Cloud Storage.
 11. `cd ~/mybucket` on the shell.
 12. `unzip newyork-yellow-taxi-trip-data-2020-2019.zip` on the shell.
-13. Execute [`run_bq_from_gcs.sh`](https://github.com/zeenfts/dbt-yellow19-bq/blob/main/run_bq_from_gcs.sh) script.
+13. Execute [`run_bq_from_gcs.sh`](https://github.com/zeenfts/dbt-yellow19-bq/blob/main/scripts/run_bq_from_gcs.sh) script.
 14. Transfer data using [Bigquery Transfer API](https://console.cloud.google.com/bigquery/transfers/configs/create).
