@@ -9,3 +9,5 @@ Info:
 3. Change value inside `< >` to the correct one --> [profiles.yml](https://github.com/zeenfts/dbt-yellow19-bq/blob/main/.dbt/profiles.yml), [run_dbt.sh](https://github.com/zeenfts/dbt-yellow19-bq/blob/main/run_dbt.sh).
 4. Execute [`run_dbt.sh`](https://github.com/zeenfts/dbt-yellow19-bq/blob/main/run_dbt.sh) script.
 5. Check the result.
+
+<sup>note: for docs can only running outside docker!</sup>
