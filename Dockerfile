@@ -28,6 +28,7 @@ ENV LANG=C.UTF-8
 RUN python -m pip install --upgrade pip setuptools wheel --no-cache-dir
 
 # Set docker basics
+RUN rm -rf /usr/app/dbt/ # for refresh every docker run
 WORKDIR /usr/app/dbt/
 VOLUME /usr/app
 ENTRYPOINT ["dbt"]
@@ -37,8 +38,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 ## Bring Necessary files/folders
-COPY dbt_project.yml .
 COPY . .
 RUN rm -rf /.dbt
 COPY /.dbt/profiles.yml /root/.dbt/profiles.yml
 COPY /.dbt/creds.json /root/.dbt/creds.json
+RUN dbt deps
+RUN dbt docs generate
