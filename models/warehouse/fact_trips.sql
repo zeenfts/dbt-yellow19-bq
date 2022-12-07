@@ -7,6 +7,10 @@ with yellow_taxi as (
         passenger_count,
     FROM 
         {{ ref('stg_yellow_taxi') }}
+    WHERE
+        RatecodeID IS NOT NULL 
+        AND
+        cast(RatecodeID as integer) < 7
 )
 
 -- vendor_taxi AS(
