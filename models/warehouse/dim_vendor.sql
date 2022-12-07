@@ -6,5 +6,7 @@ WITH vendor_stg AS(
 
 SELECT 
     VendorID,
-    decode_vendor(VendorID) as vendor_name
+    decode_vendor(VendorID) as vendor_name,
+    PULocationID,
+    DOLocationID,
 FROM vendor_stg

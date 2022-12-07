@@ -9,8 +9,6 @@ SELECT
     VendorID as vendorId,
     store_and_fwd_flag,
     RatecodeID as rateCodeId,
-    PULocationID,
-    DOLocationID,
     tpep_pickup_datetime,
     tpep_dropoff_datetime,
     payment_type,
