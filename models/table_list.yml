@@ -5,41 +5,41 @@ sources:
     schema: nytaxi
     description: A raw data that put all of Yellow Taxi 2019 part into staging area
     tables:
-      - name: yellow_tripdata_2021-01
-        identifier: yellow_tripdata_2021-01
+      - name: yellow_tripdata_2019-01
+        identifier: yellow_tripdata_2019-01
 
-      - name: yellow_tripdata_2021-02
-        identifier: yellow_tripdata_2021-02
+      - name: yellow_tripdata_2019-02
+        identifier: yellow_tripdata_2019-02
 
-      - name: yellow_tripdata_2021-03
-        identifier: yellow_tripdata_2021-03
+      - name: yellow_tripdata_2019-03
+        identifier: yellow_tripdata_2019-03
 
-      - name: yellow_tripdata_2021-04
-        identifier: yellow_tripdata_2021-04
+      - name: yellow_tripdata_2019-04
+        identifier: yellow_tripdata_2019-04
 
-      - name: yellow_tripdata_2021-05
-        identifier: yellow_tripdata_2021-05
+      - name: yellow_tripdata_2019-05
+        identifier: yellow_tripdata_2019-05
 
-      - name: yellow_tripdata_2021-06
-        identifier: yellow_tripdata_2021-06
+      - name: yellow_tripdata_2019-06
+        identifier: yellow_tripdata_2019-06
 
-      - name: yellow_tripdata_2021-07
-        identifier: yellow_tripdata_2021-07
+      - name: yellow_tripdata_2019-07
+        identifier: yellow_tripdata_2019-07
 
-      - name: yellow_tripdata_2021-08
-        identifier: yellow_tripdata_2021-08
+      - name: yellow_tripdata_2019-08
+        identifier: yellow_tripdata_2019-08
 
-      - name: yellow_tripdata_2021-09
-        identifier: yellow_tripdata_2021-09
+      - name: yellow_tripdata_2019-09
+        identifier: yellow_tripdata_2019-09
 
-      - name: yellow_tripdata_2021-10
-        identifier: yellow_tripdata_2021-10
+      - name: yellow_tripdata_2019-10
+        identifier: yellow_tripdata_2019-10
 
-      - name: yellow_tripdata_2021-11
-        identifier: yellow_tripdata_2021-11
+      - name: yellow_tripdata_2019-11
+        identifier: yellow_tripdata_2019-11
       
-      - name: yellow_tripdata_2021-12
-        identifier: yellow_tripdata_2021-12
+      - name: yellow_tripdata_2019-12
+        identifier: yellow_tripdata_2019-12
 
 models:
   - name: fact_trips

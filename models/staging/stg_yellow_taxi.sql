@@ -1,39 +1,39 @@
 with table_joined as (
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-01') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-01') }}
     UNION ALL 
     SELECT *
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-02') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-02') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-03') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-03') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-04') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-04') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-05') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-05') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-06') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-06') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-07') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-07') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-08') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-08') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-09') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-09') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-10') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-10') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-11') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-11') }}
     UNION ALL 
     SELECT * 
-    FROM {{ source('nytaxi', 'yellow_tripdata_2021-12') }}
+    FROM {{ source('nytaxi', 'yellow_tripdata_2019-12') }}
 )
 
 SELECT * FROM table_joined
