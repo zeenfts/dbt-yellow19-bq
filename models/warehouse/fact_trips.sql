@@ -11,7 +11,6 @@ with yellow_taxi as (
         payment_type,
         passenger_count,
         trip_distance,
-        tripId,
         total_amount
     FROM 
         {{ ref('stg_yellow_taxi') }}
