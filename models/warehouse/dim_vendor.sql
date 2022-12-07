@@ -7,6 +7,8 @@ WITH vendor_stg AS(
 SELECT 
     VendorID,
     decode_vendor(VendorID) as vendor_name,
+    tpep_pickup_datetime,
+    tpep_dropoff_datetime,
     PULocationID,
     DOLocationID,
 FROM vendor_stg
