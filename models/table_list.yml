@@ -58,10 +58,10 @@ models:
       description: 
       A code indicating the TPEP provider that provided the record.
       1= Creative Mobile Technologies, LLC; 2= VeriFone Inc.
-      # Can only accept these two values on default
       tests:
         - accepted_values:
           values: ['1', '2']
+# ^ Can only accept these two values on default if not will throw warning
 
     - name: tpep_pickup_datetime
       description:
@@ -89,10 +89,10 @@ models:
       4=Nassau or Westchester
       5=Negotiated fare
       6=Group ride
-      # Can only accept these six values on default
       tests:
         - accepted_values:
           values: ['1', '2', '3', '4', '5', '6']
+# ^ Can only accept these six values on default if not will throw warning
 
     - name: store_and_fwd_flag 
       description:
@@ -101,10 +101,10 @@ models:
       because the vehicle did not have a connection to the server.
       Y= store and forward trip
       N= not a store and forward trip
-      # Can only accept these two values on default
       tests:
         - accepted_values:
           values: ['Y', 'N']
+# ^ Can only accept these two values on default if not will throw warning
 
     - name: PULocationID 
       description: > 
@@ -123,10 +123,10 @@ models:
       4= Dispute
       5= Unknown
       6= Voided trip
-      # Can only accept these six values on default
       tests:
         - accepted_values:
           values: ['1', '2', '3', '4', '5', '6']
+# ^ Can only accept these six values on default if not will throw warning
 
     - name: fare_amount
       description: > 

@@ -43,4 +43,4 @@ RUN rm -rf /.dbt
 COPY /.dbt/profiles.yml /root/.dbt/profiles.yml
 COPY /.dbt/creds.json /root/.dbt/creds.json
 RUN dbt deps
-RUN dbt docs generate
+# RUN dbt docs generate
