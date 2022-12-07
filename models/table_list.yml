@@ -1,5 +1,7 @@
 version: 2
 
+# Sources name <nytaxi> change to YOUR_BIGQUERY_DATASET_SOURCE_NAME
+# Also need to change all of the same value inside models/staging/stg_yellow_taxi.sql 
 sources:
   - name: nytaxi
     schema: nytaxi
