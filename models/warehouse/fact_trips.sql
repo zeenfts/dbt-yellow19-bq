@@ -18,6 +18,8 @@ with yellow_taxi as (
         RatecodeID IS NOT NULL 
         AND
         cast(RatecodeID as integer) < 7
+        AND 
+        cast(VendorID as integer) < 3
 )
 
 SELECT *

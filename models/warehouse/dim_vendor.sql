@@ -10,6 +10,6 @@ SELECT
 FROM 
     vendor_stg
 WHERE
-    VendorID IS NOT NULL
+    VendorID IS NOT NULL AND cast(VendorID as integer) < 3
 ORDER BY
     VendorID ASC
