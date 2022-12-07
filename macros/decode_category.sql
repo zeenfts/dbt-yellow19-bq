@@ -28,3 +28,10 @@
         when '2' then "VeriFone Inc"
     end
 {%- endmacro %}
+
+{% macro decode_memory(flag_memory) -%}
+    case {{ flag_memory }}
+        when 'Y' then "store and forward trip"
+        when 'N' then "not a store and forward trip"
+    end
+{%- endmacro %}
