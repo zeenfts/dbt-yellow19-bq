@@ -11,4 +11,5 @@ SELECT
     tpep_dropoff_datetime,
     PULocationID,
     DOLocationID,
+    store_and_fwd_flag
 FROM vendor_stg
