@@ -47,17 +47,19 @@ models:
     - name: tripId
       description: 
       Primary key, from VendorID, tpep_pickup_datetime, PULocationID.
-      tests: # check whether the columns is unique and not contain null values.
+      # check whether the columns is unique and not contain null values.
+      tests:
         - not_null
         - unique
-        
+
   - name: stg_yellow_taxi
     columns:
     - name: VendorID
       description: 
       A code indicating the TPEP provider that provided the record.
       1= Creative Mobile Technologies, LLC; 2= VeriFone Inc.
-      tests: # Can only accept these two values on default
+      # Can only accept these two values on default
+      tests:
         - accepted_values:
           values: ['1', '2']
 
@@ -87,7 +89,8 @@ models:
       4=Nassau or Westchester
       5=Negotiated fare
       6=Group ride
-      tests: # Can only accept these six values on default
+      # Can only accept these six values on default
+      tests:
         - accepted_values:
           values: ['1', '2', '3', '4', '5', '6']
 
@@ -98,7 +101,8 @@ models:
       because the vehicle did not have a connection to the server.
       Y= store and forward trip
       N= not a store and forward trip
-      tests: # Can only accept these two values on default
+      # Can only accept these two values on default
+      tests:
         - accepted_values:
           values: ['Y', 'N']
 
@@ -119,7 +123,8 @@ models:
       4= Dispute
       5= Unknown
       6= Voided trip
-      tests: # Can only accept these six values on default
+      # Can only accept these six values on default
+      tests:
         - accepted_values:
           values: ['1', '2', '3', '4', '5', '6']
 
