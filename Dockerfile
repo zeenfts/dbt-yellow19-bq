@@ -28,7 +28,6 @@ ENV LANG=C.UTF-8
 RUN python -m pip install --upgrade pip setuptools wheel --no-cache-dir
 
 # Set docker basics
-RUN rm -rf /usr/app/dbt/ # for refresh every docker run
 WORKDIR /usr/app/dbt/
 VOLUME /usr/app
 ENTRYPOINT ["dbt"]
