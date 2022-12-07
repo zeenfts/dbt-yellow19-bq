@@ -11,6 +11,7 @@ SELECT
     tip_amount, 
     tolls_amount,
     improvement_surcharge,
-    congestion_surcharge
+    congestion_surcharge,
+    total_amount
 FROM
     yellow_taxi

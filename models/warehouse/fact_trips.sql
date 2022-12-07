@@ -12,7 +12,6 @@ SELECT
     payment_type,
     passenger_count,
     trip_distance,
-    total_amount
 FROM
     yellow_taxi
 WHERE 
