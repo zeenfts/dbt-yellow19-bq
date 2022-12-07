@@ -6,5 +6,12 @@ WITH ratecode_stg AS(
 
 SELECT 
     RatecodeID,
-    decode_ratecode(RatecodeID) as rate_name
-FROM ratecode_stg
+    {{ decode_ratecode('RatecodeID') }} as rate_name
+FROM 
+    ratecode_stg
+WHERE
+    RatecodeID IS NOT NULL 
+    AND
+    cast(RatecodeID as integer) < 7
+ORDER BY
+    RatecodeID ASC
