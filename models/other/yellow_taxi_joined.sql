@@ -6,8 +6,8 @@ WITH lookup_clean AS(
 
 decode_cols AS(
     SELECT 
-        tpep_pickup_datetime as pickup_datetime,
-        tpep_dropoff_datetime as dropoff_datetime,
+        pickup_datetime,
+        dropoff_datetime,
         PULocationID,
         Borough as puBorough,
         brLat as puBrLat,
@@ -23,6 +23,7 @@ decode_cols AS(
         {{ decode_payment('payment_type') }} as method_payment,
         passenger_count,
         trip_distance,
+        fare_amount,
         total_amount
     FROM {{ ref('fact_trips') }}
     INNER JOIN lookup_clean tzl
@@ -56,6 +57,7 @@ select_joined AS(
         method_payment,
         passenger_count,
         trip_distance,
+        fare_amount,
         total_amount
     FROM decode_cols
     INNER JOIN lookup_clean tzl
@@ -63,5 +65,3 @@ select_joined AS(
 )
 
 SELECT * FROM select_joined
-WHERE DATETIME(pickup_datetime) BETWEEN 
-DATETIME("2019-01-01 00:00:00") AND DATETIME("2020-01-01 00:00:00")
