@@ -33,6 +33,7 @@ select_joined AS(
     SELECT 
         pickup_datetime,
         dropoff_datetime,
+        DATETIME_DIFF(dropoff_datetime, pickup_datetime, MINUTE) as trip_duration_minutes,
         PULocationID,
         puBorough,
         puBrLat,
