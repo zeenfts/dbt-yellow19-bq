@@ -12,7 +12,7 @@ decode_cols AS(
         Borough as puBorough,
         brLat as puBrLat,
         brLon as puBrLon,
-        CONCAT(brLat, "," , brLon) as puBrLatLon,
+        CONCAT(brLat, ", " , brLon) as puBrLatLon,
         tzl.Zone as puZone,
         DOLocationID,
         store_and_fwd_flag,
@@ -25,30 +25,36 @@ decode_cols AS(
     FROM {{ ref('fact_trips') }}
     INNER JOIN lookup_clean tzl
     ON PULocationID = cast(LocationID AS string)
+), 
+
+select_joined AS(
+    SELECT 
+        pickup_datetime,
+        dropoff_datetime,
+        PULocationID,
+        puBorough,
+        puBrLat,
+        puBrLon,
+        puBrLatLon,
+        puZone,
+        DOLocationID,
+        Borough as doBorough,
+        brLat as doBrLat,
+        brLon as doBrLon,
+        CONCAT(brLat, ", " , brLon) as doBrLatLon,
+        tzl.Zone as doZone,
+        store_and_fwd_flag,
+        vendor_name,
+        rate_name,
+        method_payment,
+        passenger_count,
+        trip_distance,
+        total_amount
+    FROM decode_cols
+    INNER JOIN lookup_clean tzl
+    ON DOLocationID = cast(LocationID AS string)
 )
 
-SELECT 
-    pickup_datetime,
-    dropoff_datetime,
-    PULocationID,
-    puBorough,
-    puBrLat,
-    puBrLon,
-    puBrLatLon,
-    puZone,
-    DOLocationID,
-    Borough as doBorough,
-    brLat as doBrLat,
-    brLon as doBrLon,
-    CONCAT(brLat, "," , brLon) as doBrLatLon,
-    tzl.Zone as doZone,
-    store_and_fwd_flag,
-    vendor_name,
-    rate_name,
-    method_payment,
-    passenger_count,
-    trip_distance,
-    total_amount
-FROM decode_cols
-INNER JOIN lookup_clean tzl
-ON DOLocationID = cast(LocationID AS string)
+SELECT * FROM select_joined
+WHERE DATETIME(pickup_datetime) BETWEEN 
+DATETIME("2019-01-01 00:00:00") AND DATETIME("2020-01-01 00:00:00")
