@@ -1,9 +1,16 @@
-WITH decode_cols AS(
+WITH lookup_clean AS(
+    SELECT *
+    FROM {{ ref('dim_location') }}
+    WHERE Borough <> "Unknown"
+),
+
+decode_cols AS(
     SELECT 
         tpep_pickup_datetime as pickup_datetime,
         tpep_dropoff_datetime as dropoff_datetime,
         PULocationID,
         Borough as puBorough,
+        CONCAT(brLat, "," , brLon) as puBrLatLon,
         tzl.Zone as puZone,
         DOLocationID,
         store_and_fwd_flag,
@@ -14,7 +21,7 @@ WITH decode_cols AS(
         trip_distance,
         total_amount
     FROM {{ ref('fact_trips') }}
-    LEFT JOIN {{ ref('dim_location') }} tzl
+    INNER JOIN lookup_clean tzl
     ON PULocationID = cast(LocationID AS string)
 )
 
@@ -23,9 +30,11 @@ SELECT
     dropoff_datetime,
     PULocationID,
     puBorough,
+    puBrLatLon,
     puZone,
     DOLocationID,
     Borough as doBorough,
+    CONCAT(brLat, "," , brLon) as doBrLatLon,
     tzl.Zone as doZone,
     store_and_fwd_flag,
     vendor_name,
@@ -35,5 +44,5 @@ SELECT
     trip_distance,
     total_amount
 FROM decode_cols
-LEFT JOIN {{ ref('dim_location') }} tzl
+INNER JOIN lookup_clean tzl
 ON DOLocationID = cast(LocationID AS string)
