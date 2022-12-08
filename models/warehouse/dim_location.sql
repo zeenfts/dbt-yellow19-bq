@@ -4,7 +4,9 @@ select
     Latitude as brLat,
     Longitude as brLon,
     tzl.Zone,
-    service_zone
+    service_zone,
+    Country,
+    bgl.State
 from 
 {{ ref('taxi_zone_lookup') }} tzl
 LEFT JOIN {{ ref('borough_latlon') }} bgl
