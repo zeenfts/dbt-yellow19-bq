@@ -4,3 +4,4 @@ __pycache__
 *.sh
 dbt_packages/
 logs/
+/.img/
