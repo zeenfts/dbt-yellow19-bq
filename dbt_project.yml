@@ -22,9 +22,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Define materialized as one of: table, view, incremental, & ephemeral
 models:
   dbt_yellow19_bq:
+    nytaxi:
+      +docs:
+        node_color: "blue"
     warehouse:
       +materialized: table
+      +docs:
+        node_color: "green"
     staging:
       +materialized: view
     other:
       +materialized: view
+      +docs:
+        node_color: "purple"
